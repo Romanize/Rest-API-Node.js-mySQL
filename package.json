@@ -1,10 +1,9 @@
 {
   "name": "rest-api-nodejs-mysql",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Rest API based on Node.js and mySql",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon ./src/index.js"
   },
   "author": "Robert Martinez",

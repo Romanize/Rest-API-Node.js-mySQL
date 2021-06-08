@@ -55,25 +55,6 @@ userController.add = (req,res) =>{
     })
 }
 
-//Delete value from db
-userController.delete = (req,res) =>{
-    const { id } = req.params
-
-    req.getConnection((err,conn)=>{
-        if(err){
-            res.send(err);
-        } else {
-            conn.query(`DELETE FROM users WHERE id=?`,[id], (err, user)=>{
-                if(err){
-                    res.send(err)
-                } else {
-                    res.redirect('/')
-                }
-            })
-        }
-    })
-}
-
 //Update value from db
 userController.update = (req,res) =>{
     const { name,email,username } = req.body;
@@ -93,5 +74,25 @@ userController.update = (req,res) =>{
         }
     })
 }
+
+//Delete value from db
+userController.delete = (req,res) =>{
+    const { id } = req.params
+
+    req.getConnection((err,conn)=>{
+        if(err){
+            res.send(err);
+        } else {
+            conn.query(`DELETE FROM users WHERE id=?`,[id], (err, user)=>{
+                if(err){
+                    res.send(err)
+                } else {
+                    res.redirect('/')
+                }
+            })
+        }
+    })
+}
+
 
 module.exports = userController
